@@ -11,18 +11,33 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/,
+        test: /\.s(c|a)ss$/,
         use: [
           'vue-style-loader',
-          'css-loader'
+          'css-loader',
+          {
+            loader: 'sass-loader',
+            // Requires sass-loader@^7.0.0
+            options: {
+              implementation: require('sass'),
+              indentedSyntax: true // optional
+            },
+            // Requires >= sass-loader@^8.0.0
+            options: {
+              implementation: require('sass'),
+              sassOptions: {
+                indentedSyntax: true // optional
+              },
+            },
+          },
         ],
-      },      {
+      },    
+      {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
           loaders: {
           }
-          // other vue-loader options go here
         }
       },
       {
@@ -34,7 +49,6 @@ module.exports = {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'file-loader',
         options: {
-          // name: '[name].[ext]?[hash]'
           name: function(file) {
             return 'assets/[name].[ext]?[hash]';
           }

@@ -45,7 +45,7 @@ export default {
     methods: {
         getNamePlayer(index) {
             var defaultName = 'Player ' + (index + 1); // Player 1 || Player 2
-            console.log(index, defaultName, this.isWinner, this.activePlayer);
+            // console.log(index, defaultName, this.isWinner, this.activePlayer);
             // Nguoi hien tai , Co người thắng cuộc
             if(this.activePlayer == index && this.isWinner) {
                 defaultName = 'Winner!';

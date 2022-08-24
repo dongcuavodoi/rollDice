@@ -24,7 +24,7 @@ export default {
     methods: {
         confirm() {
             // Truyền event ra App.vue
-            console.log('confirm PopupRule.vue');
+            // console.log('confirm PopupRule.vue');
             this.$emit('handleConfirm')
         }
     },

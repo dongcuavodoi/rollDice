@@ -50,12 +50,12 @@ export default {
         //     // console.log(e.target.value);
         // },
         newGame() {
-            console.log('newGame Controls.vue');
+            // console.log('newGame Controls.vue');
             // Kích hoạt sự kiện handleNewGame của App truyền vào
             this.$emit('handleNewGame');
         },
         rollDice() {
-            console.log('rollDice Controls.vue');
+            // console.log('rollDice Controls.vue');
             this.$emit('handleRollDice');
         }
     }
